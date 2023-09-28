@@ -1,0 +1,266 @@
+//variables
+$orange:#ffe6a0;
+$pink:#ff6f82;
+$border-radius:50%;
+$box-shadow: 3px 3px 10px #fff;
+$menu-hover-color:white;
+
+body{
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+   
+    
+}
+
+.tab{//indenting text
+    margin-left: 40px;
+}
+.bold{//bold text in a paragaraph
+    font-weight: bold;
+}
+
+
+/*common properties-----------*/
+.wrapper{
+    max-width: 1100px;
+    padding-top: 20px;
+    margin: 0 auto;
+}
+
+
+.big-background{
+    min-height: 100vh;
+    background: linear-gradient(
+        45deg,
+        $orange 0%,
+        $orange 50%,
+        $pink 50%,
+        $pink 100%
+        );
+}
+
+.page-header{
+    
+    
+    ul{
+        display: flex;
+        list-style: none;
+        justify-content: right;
+
+
+        li{
+           margin-right: 20px;
+            font-size: 20px;
+               
+            a{
+                text-decoration: none;
+                color: black;
+                background: 
+                linear-gradient(currentColor 0 0) 
+                bottom /var(--d, 0) 3px 
+                no-repeat;
+                transition:0.5s;
+            &:hover{
+                color: $menu-hover-color;
+                --d: 100%;
+                }
+            }
+        }
+    }
+
+}
+/*index.html---------*/
+#home-callout{
+    margin-top: 20%;
+    text-align: center;
+    h1{
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-style: italic;
+            font-size: 70px;
+            text-shadow: 2px 2px #ffffff;
+
+    }
+    p{
+        margin: 10px;
+        font-size: 20px;
+        line-height: 1.5;
+
+    }
+
+}
+
+
+/*about.html-------------*/
+#my-intro{
+    display: flex;
+    margin-top: 10%;
+
+    #intro-img{
+        width: 40%;
+        img{
+            height: 400px;
+            border-radius: $border-radius;
+       
+        }
+    }
+    #intro-text{
+        width: 60%;
+        margin-top:5%;
+        background-color: #ffffff25;
+        p{
+            padding: 5% 5% 0 5%;
+            line-height: 2.0;
+        }
+    }
+}
+
+
+/*portfolio.html-----------*/
+
+.portfolio-bg{
+    min-height: 100vh;
+    background: linear-gradient(
+        45deg,
+        rgba(255, 230, 160, 0.377) 0%,
+        rgba(255, 230, 160, 0.377) 50%,
+        rgba(255, 111, 130, 0.377) 50%,
+        hsla(352, 100%, 72%, 0.377) 100%
+        );
+}
+
+
+#mywork{
+    h1{
+        margin: 5%;
+        font-size: 40px;
+        text-align: center;
+    }
+}
+.portfolio-content{
+    display: flex;
+    padding-bottom: 5%;
+    .portfolio-img{
+        width: 50%;
+        
+        img{
+            height: 250px;
+            width: auto;
+           // border: 1px solid #000;
+            
+        }
+    }
+    .portfolio-detail{
+        width: 50%;
+
+        h3{
+            a{
+                color:#ff1b41;
+                &:hover{
+                    color: $pink ;
+                }
+            }
+        }
+    }
+}
+    
+
+/*gallery page------*/
+#my-gallery{
+    h1{
+        margin: 5%;
+        font-size: 40px;
+        text-align: center;
+    }
+    padding-bottom: 3%;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+    justify-content: center;
+  }
+  
+  /* Create four equal columns that sits next to each other */
+  .column {
+    flex: 30%;
+    max-width: 30%;
+    padding: 0 4px;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    
+  }
+
+
+
+
+
+/*web responsive------------*/
+@media (max-width:600px){
+
+    /*about.html-------*/
+    #my-intro{
+        flex-direction: column;
+        #intro-img{
+            width: 100%;
+            img{
+                height: 300px;
+                border-radius: $border-radius;
+                display: block;
+                margin: 0 auto;
+           
+            }
+        }
+        #intro-text{
+            width: 100%;
+            margin-top:5%;
+            padding: 10px;
+            
+        }
+    }
+
+
+    /*portfolio.html---------*/
+
+    .portfolio-content{
+    flex-direction: column;
+    padding-bottom: 5%;
+    .portfolio-img{
+        width: 100%;
+        
+        img{
+
+        width: 400px;
+        height: auto;
+            display: block;
+            margin: 0 auto;
+            
+        }
+    }
+    .portfolio-detail{
+        width: 100%;
+        margin: 0 atuo;
+        padding: 5%;
+      
+        
+    }
+}
+
+    /*---gallery.html-----*/
+
+    .column {
+
+        flex: 100%;
+        max-width: 100%;
+    }
+
+
+  
+
+
+}
